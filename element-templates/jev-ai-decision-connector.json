@@ -1,0 +1,516 @@
+{
+  "$schema": "https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json",
+  "name": "Jev AI Decision Connector",
+  "id": "io.github.rajeshponna.jev-ai-decision",
+  "version": 5,
+  "description": "Fast typed decisions with TypeSafe Jev: pick the best option, find all matches, or ask noul / choice / score questions",
+  "documentationRef": "https://docs.typesafe.ai/api",
+  "icon": {
+    "contents": "data:image/webp;base64,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"
+  },
+  "category": {
+    "id": "connectors",
+    "name": "Connectors"
+  },
+  "appliesTo": [
+    "bpmn:Task"
+  ],
+  "elementType": {
+    "value": "bpmn:ServiceTask"
+  },
+  "groups": [
+    {
+      "id": "authentication",
+      "label": "Authentication"
+    },
+    {
+      "id": "operation",
+      "label": "Operation"
+    },
+    {
+      "id": "payload",
+      "label": "Payload"
+    },
+    {
+      "id": "largeLists",
+      "label": "Large lists (advanced)",
+      "openByDefault": false
+    },
+    {
+      "id": "output",
+      "label": "Response mapping"
+    },
+    {
+      "id": "error",
+      "label": "Error handling"
+    },
+    {
+      "id": "retries",
+      "label": "Retries"
+    }
+  ],
+  "properties": [
+    {
+      "type": "Hidden",
+      "value": "io.github.rajeshponna:jev-ai-decision:1",
+      "binding": {
+        "type": "zeebe:taskDefinition",
+        "property": "type"
+      }
+    },
+    {
+      "label": "TypeSafe API key",
+      "group": "authentication",
+      "type": "String",
+      "feel": "optional",
+      "value": "{{secrets.TYPESAFE_API_KEY}}",
+      "description": "Store your key as a Camunda secret and reference it: {{secrets.TYPESAFE_API_KEY}}",
+      "binding": {
+        "type": "zeebe:input",
+        "name": "apiKey"
+      },
+      "constraints": {
+        "notEmpty": true
+      }
+    },
+    {
+      "label": "Organization ID",
+      "group": "authentication",
+      "type": "String",
+      "feel": "optional",
+      "optional": true,
+      "description": "Optional. Your organization or team identifier, returned in the response for tracking",
+      "binding": {
+        "type": "zeebe:input",
+        "name": "organizationId"
+      }
+    },
+    {
+      "label": "API endpoint",
+      "group": "authentication",
+      "type": "String",
+      "feel": "optional",
+      "value": "https://api.typesafe.ai",
+      "description": "Change only for a proxy or private deployment",
+      "binding": {
+        "type": "zeebe:input",
+        "name": "baseUrl"
+      },
+      "constraints": {
+        "notEmpty": true
+      }
+    },
+    {
+      "id": "operation",
+      "label": "Operation",
+      "group": "operation",
+      "type": "Dropdown",
+      "value": "select",
+      "choices": [
+        {
+          "name": "Choice: pick the best option",
+          "value": "select"
+        },
+        {
+          "name": "Noul: find all matching options",
+          "value": "filter"
+        },
+        {
+          "name": "Custom questions (noul / choice / score)",
+          "value": "questions"
+        }
+      ],
+      "binding": {
+        "type": "zeebe:input",
+        "name": "operation"
+      }
+    },
+    {
+      "id": "modelSelect",
+      "label": "Model",
+      "group": "payload",
+      "type": "Dropdown",
+      "value": "jev-latest",
+      "choices": [
+        {
+          "name": "jev-latest (recommended)",
+          "value": "jev-latest"
+        },
+        {
+          "name": "Custom model",
+          "value": "custom"
+        }
+      ],
+      "binding": {
+        "type": "zeebe:input",
+        "name": "modelSelect"
+      }
+    },
+    {
+      "type": "Hidden",
+      "value": "jev-latest",
+      "binding": {
+        "type": "zeebe:input",
+        "name": "model"
+      },
+      "condition": {
+        "property": "modelSelect",
+        "equals": "jev-latest"
+      }
+    },
+    {
+      "label": "Custom model",
+      "group": "payload",
+      "type": "String",
+      "description": "A pinned model, e.g. to keep results stable across releases",
+      "binding": {
+        "type": "zeebe:input",
+        "name": "model"
+      },
+      "condition": {
+        "property": "modelSelect",
+        "equals": "custom"
+      },
+      "constraints": {
+        "notEmpty": true
+      }
+    },
+    {
+      "label": "State",
+      "group": "payload",
+      "type": "Text",
+      "feel": "required",
+      "description": "What Jev evaluates, usually the user's request, e.g. =prompt",
+      "binding": {
+        "type": "zeebe:input",
+        "name": "state"
+      },
+      "constraints": {
+        "notEmpty": true
+      }
+    },
+    {
+      "label": "Options",
+      "group": "payload",
+      "type": "Text",
+      "feel": "required",
+      "value": "=books",
+      "description": "List of any size. Each: {id, name, type?, description?}",
+      "binding": {
+        "type": "zeebe:input",
+        "name": "items"
+      },
+      "condition": {
+        "property": "operation",
+        "oneOf": [
+          "select",
+          "filter"
+        ]
+      },
+      "constraints": {
+        "notEmpty": true
+      }
+    },
+    {
+      "label": "Instructions",
+      "group": "payload",
+      "type": "Text",
+      "feel": "optional",
+      "value": "Which option best fits this request?",
+      "description": "The choice question Jev answers over your options",
+      "binding": {
+        "type": "zeebe:input",
+        "name": "instructions"
+      },
+      "condition": {
+        "property": "operation",
+        "equals": "select"
+      },
+      "constraints": {
+        "notEmpty": true
+      }
+    },
+    {
+      "label": "Instructions",
+      "group": "payload",
+      "type": "Text",
+      "feel": "optional",
+      "value": "Does `item` match what the user is asking for?",
+      "description": "Yes/no question asked for every option. Refer to it as `item`",
+      "binding": {
+        "type": "zeebe:input",
+        "name": "instructions"
+      },
+      "condition": {
+        "property": "operation",
+        "equals": "filter"
+      },
+      "constraints": {
+        "notEmpty": true
+      }
+    },
+    {
+      "label": "Top N",
+      "group": "payload",
+      "type": "String",
+      "feel": "optional",
+      "value": "1",
+      "description": "1 = best option only, 3 = top 3",
+      "binding": {
+        "type": "zeebe:input",
+        "name": "topN"
+      },
+      "condition": {
+        "property": "operation",
+        "equals": "select"
+      }
+    },
+    {
+      "label": "Noul threshold",
+      "group": "payload",
+      "type": "String",
+      "feel": "optional",
+      "value": "0.5",
+      "description": "Between 0 and 1. Options at or above this are returned",
+      "binding": {
+        "type": "zeebe:input",
+        "name": "threshold"
+      },
+      "condition": {
+        "property": "operation",
+        "equals": "filter"
+      }
+    },
+    {
+      "label": "Max matches",
+      "group": "payload",
+      "type": "String",
+      "feel": "optional",
+      "optional": true,
+      "description": "Optional cap, highest noul first",
+      "binding": {
+        "type": "zeebe:input",
+        "name": "maxMatches"
+      },
+      "condition": {
+        "property": "operation",
+        "equals": "filter"
+      }
+    },
+    {
+      "label": "Questions",
+      "group": "payload",
+      "type": "Text",
+      "feel": "required",
+      "description": "questionId -> {type: noul | choice | score, instructions, criteria}. Choice max 255 options, score 2 to 10 levels",
+      "value": "={department: {type: \"choice\", instructions: \"Which team should handle this?\", criteria: {billing: \"Payments, invoicing, refunds\", technical: \"Bugs, outages, integrations\", sales: \"Pricing, upgrades, new accounts\"}}, is_urgent: {type: \"noul\", instructions: \"Does this convey urgency?\"}}",
+      "binding": {
+        "type": "zeebe:input",
+        "name": "questions"
+      },
+      "condition": {
+        "property": "operation",
+        "equals": "questions"
+      },
+      "constraints": {
+        "notEmpty": true
+      }
+    },
+    {
+      "label": "Minimum confidence",
+      "group": "payload",
+      "type": "String",
+      "feel": "optional",
+      "value": "0.7",
+      "description": "Between 0 and 1. Below this, needsReview = true",
+      "binding": {
+        "type": "zeebe:input",
+        "name": "minConfidence"
+      },
+      "condition": {
+        "property": "operation",
+        "oneOf": [
+          "select",
+          "questions"
+        ]
+      }
+    },
+    {
+      "label": "Group size",
+      "group": "largeLists",
+      "type": "String",
+      "feel": "optional",
+      "optional": true,
+      "description": "Options per choice question (default 250, max 254)",
+      "binding": {
+        "type": "zeebe:input",
+        "name": "groupSize"
+      },
+      "condition": {
+        "property": "operation",
+        "equals": "select"
+      }
+    },
+    {
+      "label": "Finalists per group",
+      "group": "largeLists",
+      "type": "String",
+      "feel": "optional",
+      "optional": true,
+      "description": "Top K per group kept for the next round (default 3)",
+      "binding": {
+        "type": "zeebe:input",
+        "name": "finalistsPerGroup"
+      },
+      "condition": {
+        "property": "operation",
+        "equals": "select"
+      }
+    },
+    {
+      "label": "Questions per API call",
+      "group": "largeLists",
+      "type": "String",
+      "feel": "optional",
+      "optional": true,
+      "description": "Default 4 for choice, 50 for noul",
+      "binding": {
+        "type": "zeebe:input",
+        "name": "questionsPerCall"
+      },
+      "condition": {
+        "property": "operation",
+        "oneOf": [
+          "select",
+          "filter"
+        ]
+      }
+    },
+    {
+      "label": "Max tokens per API call",
+      "group": "largeLists",
+      "type": "String",
+      "feel": "optional",
+      "optional": true,
+      "description": "Requests are split to stay under this (default 20000; Jev context is 32k)",
+      "binding": {
+        "type": "zeebe:input",
+        "name": "maxTokensPerCall"
+      },
+      "condition": {
+        "property": "operation",
+        "oneOf": [
+          "select",
+          "filter"
+        ]
+      }
+    },
+    {
+      "label": "Parallel API calls",
+      "group": "largeLists",
+      "type": "String",
+      "feel": "optional",
+      "optional": true,
+      "description": "Default 4",
+      "binding": {
+        "type": "zeebe:input",
+        "name": "maxConcurrentCalls"
+      },
+      "condition": {
+        "property": "operation",
+        "oneOf": [
+          "select",
+          "filter"
+        ]
+      }
+    },
+    {
+      "label": "Max options",
+      "group": "largeLists",
+      "type": "String",
+      "feel": "optional",
+      "optional": true,
+      "description": "Safety cap on list size (default 50000)",
+      "binding": {
+        "type": "zeebe:input",
+        "name": "maxItems"
+      },
+      "condition": {
+        "property": "operation",
+        "oneOf": [
+          "select",
+          "filter"
+        ]
+      }
+    },
+    {
+      "label": "Result variable",
+      "group": "output",
+      "type": "String",
+      "value": "jev",
+      "description": "Stores the full response, e.g. jev.selection.id",
+      "binding": {
+        "type": "zeebe:taskHeader",
+        "key": "resultVariable"
+      }
+    },
+    {
+      "label": "Result expression",
+      "group": "output",
+      "type": "Text",
+      "feel": "required",
+      "optional": true,
+      "description": "Optional, e.g. ={bookId: response.selection.id}",
+      "binding": {
+        "type": "zeebe:taskHeader",
+        "key": "resultExpression"
+      }
+    },
+    {
+      "label": "Connection timeout",
+      "group": "error",
+      "type": "String",
+      "feel": "optional",
+      "value": "30",
+      "description": "Seconds to wait for Jev before retrying",
+      "binding": {
+        "type": "zeebe:input",
+        "name": "timeoutSeconds"
+      }
+    },
+    {
+      "label": "Error expression",
+      "group": "error",
+      "type": "Text",
+      "feel": "required",
+      "optional": true,
+      "description": "Codes: JEV_UNAUTHORIZED, JEV_INVALID_REQUEST, JEV_INVALID_INPUT, JEV_ERROR",
+      "binding": {
+        "type": "zeebe:taskHeader",
+        "key": "errorExpression"
+      }
+    },
+    {
+      "label": "Retries",
+      "group": "retries",
+      "type": "String",
+      "feel": "optional",
+      "value": "3",
+      "binding": {
+        "type": "zeebe:taskDefinition",
+        "property": "retries"
+      }
+    },
+    {
+      "label": "Retry backoff",
+      "group": "retries",
+      "type": "String",
+      "value": "PT10S",
+      "description": "ISO-8601 duration between retries",
+      "binding": {
+        "type": "zeebe:taskHeader",
+        "key": "retryBackoff"
+      }
+    }
+  ]
+}

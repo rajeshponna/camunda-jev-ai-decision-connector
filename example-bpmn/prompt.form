@@ -1,0 +1,23 @@
+{
+  "components": [
+    {
+      "label": "Enter Prompt",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1ko1sgi",
+        "columns": null
+      },
+      "id": "Field_1lxgn4b",
+      "key": "prompt"
+    }
+  ],
+  "type": "default",
+  "id": "PromptForm",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.9.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.48.0"
+  },
+  "schemaVersion": 19
+}
