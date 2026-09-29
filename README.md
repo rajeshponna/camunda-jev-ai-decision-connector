@@ -9,10 +9,28 @@ repair.
 
 > This is a community connector. It is not an official Camunda or TypeSafe AI product.
 
+## At a glance
+
+<table>
+  <tr>
+    <td><img src="docs/images/carousel-03-meet-jev.png" width="260" alt="What is Jev"></td>
+    <td><img src="docs/images/carousel-04-llm-vs-jev.png" width="260" alt="LLM vs decision model"></td>
+    <td><img src="docs/images/carousel-05-cost.png" width="260" alt="Why it costs less"></td>
+  </tr>
+  <tr>
+    <td><img src="docs/images/carousel-06-operations.png" width="260" alt="Three operations"></td>
+    <td><img src="docs/images/carousel-07-demo.png" width="260" alt="Book recommendation demo"></td>
+    <td><img src="docs/images/carousel-08-any-list-size.png" width="260" alt="Lists of any size"></td>
+  </tr>
+</table>
+
+Full slide deck: [docs/Jev-AI-Decision-Connector.pptx](docs/Jev-AI-Decision-Connector.pptx)
+
 ---
 
 ## Contents
 
+- [At a glance](#at-a-glance)
 - [What is Jev and TypeSafe AI](#what-is-jev-and-typesafe-ai)
 - [LLM vs decision model](#llm-vs-decision-model)
 - [Why it costs so much less](#why-it-costs-so-much-less)
@@ -516,18 +534,27 @@ Long option descriptions cost more. Keep them to one sentence.
 ## Build from source
 
 ```
-jev-ai-decision-connector/
+camunda-jev-ai-decision-connector/
+├── README.md
+├── LICENSE
 ├── pom.xml
 ├── Dockerfile
 ├── element-templates/
 │   └── jev-ai-decision-connector.json
-└── src/main/java/io/github/rajeshponna/jev/
-    ├── JevConnectorFunction.java   entry point, operations
-    ├── CatalogSelector.java        tournament for large choice lists
-    ├── CatalogFilter.java          noul filtering
-    ├── JevClient.java              HTTP, retries, token budget
-    ├── JevRequest.java             input binding
-    └── JevResponse.java            response model
+├── src/main/java/io/github/rajeshponna/jev/
+│   ├── JevConnectorFunction.java   entry point, operations
+│   ├── CatalogSelector.java        tournament for large choice lists
+│   ├── CatalogFilter.java          noul filtering
+│   ├── JevClient.java              HTTP, retries, token budget
+│   ├── JevRequest.java             input binding
+│   └── JevResponse.java            response model
+├── example-bpmn/
+│   ├── jev.bpmn                    book recommendation process
+│   ├── prompt.form                 form for the user's request
+│   └── JobWorkerToGetListOfUSerTaskInAdocSubProcess.java   fetch-adhoc-tasks worker
+└── docs/
+    ├── Jev-AI-Decision-Connector.pptx
+    └── images/                     slides used in this README
 ```
 
 ```bash
